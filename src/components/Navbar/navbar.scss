@@ -1,0 +1,15 @@
+@import '../../styles/globals.scss';
+
+.bg-yellow{
+  background-color: $yellow;
+
+  .input-group-text{
+    cursor: pointer;
+    transition: $easy-in-out;
+
+    &:hover,
+    &.hover{
+      background-color: white;
+    }
+  }
+}
