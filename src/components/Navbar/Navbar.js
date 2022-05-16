@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-yellow row justify-content-center gx-0'>
-      <div className="d-flex col-10">
+      <div className="d-flex col-12 col-md-10">
         <a className="navbar-brand me-4" href="/">
           <img src={logo} alt="logo-mercado-libre" />
         </a>
