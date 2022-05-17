@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <form className="w-100">
             <div className="input-group">
-              <input type="text" className="form-control border-0" placeholder="Nunca dejes de buscar" aria-label="unca dejes de buscar" aria-describedby="basic-addon2" />
+              <input type="text" className="form-control border-0 fs-placeholder" placeholder="Nunca dejes de buscar" aria-label="unca dejes de buscar" aria-describedby="basic-addon2" />
               <span className="input-group-text border-0" id="basic-addon2" onClick={handleClick}><img src={search} alt="seach-icon" /></span>
             </div>
           </form>

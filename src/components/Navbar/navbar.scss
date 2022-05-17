@@ -3,6 +3,10 @@
 .bg-yellow{
   background-color: $yellow;
 
+  .fs-placeholder{
+    font-size: 18px;
+  }
+
   .input-group-text{
     cursor: pointer;
     transition: $easy-in-out;
