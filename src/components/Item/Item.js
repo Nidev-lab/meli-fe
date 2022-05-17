@@ -3,7 +3,7 @@ import './item.scss';
 
 const Item = () => {
   return (
-    <section className="d-flex item">
+    <article className="d-flex item">
       <div className="p-3">
         <img src='https://picsum.photos/200' alt="item-product" className="rounded image"/>
       </div>
@@ -19,7 +19,7 @@ const Item = () => {
           <p className='location'>Capital Federal</p>
         </section>
       </div>
-    </section>
+    </article>
   );
 };
 
