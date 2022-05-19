@@ -1,0 +1,31 @@
+.product-detail{
+  padding: 32px;
+
+  .image{
+    width: 680px;
+    margin-right: 32px;
+  }
+
+  .sold-product{
+    font-size: 14px;
+  }
+
+  .name-product{
+    font-weight: bold;
+    margin-bottom: 32px;
+  }
+
+  .price-product{
+    font-size: 46px;
+    margin-bottom: 32px;
+  }
+
+  .buy-product{
+    padding-right: 32px;
+  }
+
+  .description-product{
+    font-size: 28px;
+    margin: 32px 0;
+  }
+}
