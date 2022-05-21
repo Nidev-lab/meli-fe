@@ -1,13 +1,22 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/Logo_ML.png';
 import search from '../../assets/images/ic_Search.png';
 import './navbar.scss';
+import GlobalContext from '../../context/GlobalContext';
 
 const Navbar = () => {
-  const [searchTextParam, setTextSearch] = useState('');
+  const navigate = useNavigate();
 
-  const handleClick = () => {
-    console.log(searchTextParam);
+  const { setProductList, searchParam } = useContext(GlobalContext);
+  const [searchTextParam, setTextSearch] = useState(searchParam);
+
+  const handleClick = async () => {
+    const resp = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${searchTextParam}`);
+    const json = await resp.json();
+
+    setProductList(json);
+    navigate(`/items?search?q=${searchTextParam}`);
   };
 
   const handleChange = ({ target }) => {
@@ -28,8 +37,8 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <form className="w-100">
             <div className="input-group">
-              <input type="text" className="form-control border-0 fs-placeholder" placeholder="Nunca dejes de buscar" aria-label="Nunca dejes de buscar" aria-describedby="basic-addon2" onChange={handleChange}/>
-              <span className="input-group-text border-0" id="basic-addon2" onClick={handleClick}><img src={search} alt="seach-icon" /></span>
+              <input type="text" className="form-control border-0 fs-placeholder" placeholder="Nunca dejes de buscar" aria-label="Nunca dejes de buscar" aria-describedby="basic-addon2" onChange={handleChange} defaultValue={searchTextParam} />
+              <span onClick={handleClick} className="input-group-text border-0" id="basic-addon2"><img src={search} alt="seach-icon" /></span>
             </div>
           </form>
         </div>
