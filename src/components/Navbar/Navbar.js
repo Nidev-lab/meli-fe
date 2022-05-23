@@ -6,6 +6,7 @@ import './navbar.scss';
 import GlobalContext from '../../context/GlobalContext';
 
 const Navbar = () => {
+  const urlBase = process.env.REACT_APP_URL_BASE;
   const navigate = useNavigate();
 
   const { setProductList, searchParam, setIsLoading } = useContext(GlobalContext);
@@ -13,7 +14,7 @@ const Navbar = () => {
 
   const handleClick = async () => {
     setIsLoading(true);
-    const resp = await fetch(`http://localhost:8000/api/items?q=${searchTextParam}`);
+    const resp = await fetch(`${urlBase}?q=${searchTextParam}`);
     const json = await resp.json();
 
     setProductList(json);
