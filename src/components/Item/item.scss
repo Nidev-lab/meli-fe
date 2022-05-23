@@ -1,8 +1,17 @@
 @import '../../styles/globals.scss';
 
 .item{
-  .image{
+  figure{
     width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+      width: 180px;
+      height: 180px;  
+    }
   }
 
   .price{

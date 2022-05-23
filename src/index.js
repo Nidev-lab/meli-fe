@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { IntlProvider } from 'react-intl';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
@@ -10,9 +11,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <GlobalProvider>
-        <App />
-      </GlobalProvider>
+      <IntlProvider>
+        <GlobalProvider>
+          <App />
+        </GlobalProvider>
+      </IntlProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );

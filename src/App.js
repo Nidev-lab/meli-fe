@@ -5,11 +5,13 @@ import { Home } from './pages/Home';
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Navbar />} />
-      <Route path="/items" element={<Home />} />
-      <Route path="/items/:id" element={<Detail />} />
-    </Routes>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/items" element={<Home />} />
+        <Route path="/items/:id" element={<Detail />} />
+      </Routes>
+    </>
   );
 };
 
