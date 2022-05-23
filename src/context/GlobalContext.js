@@ -4,6 +4,7 @@ const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
   const [searchParam, setSearchParam] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [productList, setProductList] = useState([]);
 
   const handleSearchParam = async () => {
@@ -21,6 +22,8 @@ const GlobalProvider = ({ children }) => {
     searchParam,
     setProductList,
     productList,
+    setIsLoading,
+    isLoading,
   };
 
   return <GlobalContext.Provider value={data}>{children}</GlobalContext.Provider>;

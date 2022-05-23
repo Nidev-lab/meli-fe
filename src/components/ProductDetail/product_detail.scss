@@ -3,6 +3,10 @@
 
   .detail-data{
     padding-left: 32px;
+
+    @media (max-width: 767.98px) {
+      padding-left: 0;
+    }
   }
 
   .img-styles{
@@ -14,6 +18,10 @@
   .image{
     max-height: 680px;
     width: 680px;
+
+    @media (max-width: 767.98px) {
+      width: 100%;
+    }
   }
 
   .sold-product{
@@ -32,10 +40,24 @@
 
   .buy-product{
     padding-right: 32px;
+
+    @media (max-width: 767.98px) {
+      padding-right: 0;
+    }
   }
 
-  .description-product{
+  .description-title{
     font-size: 28px;
     margin: 32px 0;
+  }
+
+  .description{
+    @media (max-width: 767.98px) {
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
   }
 }
