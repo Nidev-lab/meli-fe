@@ -5,18 +5,22 @@ import { Layout } from '../../components/Layout';
 import { Container } from '../../components/Container';
 import ProductDetail from '../../components/ProductDetail/ProductDetail';
 import GlobalContext from '../../context/GlobalContext';
+import Loading from '../../components/Loading/Loading';
 
 const Detail = () => {
-  const { productList } = useContext(GlobalContext);
+  const urlBase = process.env.REACT_APP_URL_BASE;
+  const { productList, setIsLoading, isLoading } = useContext(GlobalContext);
   const { id } = useParams();
 
   const [item, setItem] = useState([]);
 
   const handleDetail = async () => {
-    const resp = await fetch(`http://localhost:8000/api/items/${id}`);
+    setIsLoading(true);
+    const resp = await fetch(`${urlBase}/${id}`);
     const json = await resp.json();
 
     setItem(json.items);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -25,10 +29,17 @@ const Detail = () => {
 
   return (
     <Layout>
-      <Breadcrum categories={productList.categories} />
-      <Container>
-        <ProductDetail {...item} />
-      </Container>
+      {isLoading
+        ? <Loading />
+        : (
+          <>
+            <Breadcrum categories={productList.categories} />
+            <Container>
+              <ProductDetail {...item} />
+            </Container>
+          </>
+        )
+      }
     </Layout>
   );
 };
