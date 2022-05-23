@@ -12,7 +12,7 @@ const Navbar = () => {
   const [searchTextParam, setTextSearch] = useState(searchParam);
 
   const handleClick = async () => {
-    const resp = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${searchTextParam}`);
+    const resp = await fetch(`http://localhost:8000/api/items?q=${searchTextParam}`);
     const json = await resp.json();
 
     setProductList(json);
