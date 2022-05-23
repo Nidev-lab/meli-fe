@@ -1,9 +1,19 @@
 .product-detail{
   padding: 32px;
 
+  .detail-data{
+    padding-left: 32px;
+  }
+
+  .img-styles{
+    max-height: 680px;
+    display: flex;
+    align-items: flex-start;
+  }
+
   .image{
+    max-height: 680px;
     width: 680px;
-    margin-right: 32px;
   }
 
   .sold-product{

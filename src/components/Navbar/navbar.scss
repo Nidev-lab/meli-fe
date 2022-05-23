@@ -7,6 +7,10 @@
     font-size: 18px;
   }
 
+  .form-control:focus{
+    box-shadow: none;
+  }
+
   .input-group-text{
     cursor: pointer;
     transition: $easy-in-out;

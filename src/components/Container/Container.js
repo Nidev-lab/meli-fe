@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
-const Container = ({ children }) => {
+const Container = ({ children, className }) => {
   return (
-    <section className="bg-white rounded mb-5 px-3">
+    <section className={`bg-white rounded mb-5 ${className}`}>
       {children}
     </section>
   );
@@ -13,6 +13,7 @@ Container.propTypes = {
     PropTypes.array,
     PropTypes.object,
   ]),
+  className: PropTypes.string,
 };
 
 export default Container;
