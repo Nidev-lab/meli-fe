@@ -7,11 +7,11 @@ const ProductDetail = ({
 }) => {
   return (
     <div className='product-detail'>
-      <article className="d-flex">
-        <figure>
+      <article className="row">
+        <figure className='m-0 col-12 col-md'>
           <img src={picture} alt="detail product" className="rounded image" />
         </figure>
-        <div className='detail-data'>
+        <div className='detail-data col-12 col-md'>
           <p className='sold-product'>Nuevo - {soldQuantity} vendidos</p>
           <h4 className='name-product'>{title}</h4>
           <p className='price-product'>
@@ -23,8 +23,8 @@ const ProductDetail = ({
         </div>
       </article>
       <section>
-        <p className="description-product">Descripcion del producto</p>
-        <p className='col-8'>{description}</p>
+        <p className="description-title">Descripcion del producto</p>
+        <p className='col-12 col-sm-8 description'>{description}</p>
       </section>
     </div>
   );

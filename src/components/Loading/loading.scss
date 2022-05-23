@@ -1,0 +1,13 @@
+@import '../../styles/globals.scss';
+
+.loading{
+  height: 65vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .text-warning{
+    color: $yellow;
+  }
+}
